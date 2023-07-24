@@ -19,7 +19,7 @@ jobs:
         git config --global user.name "Jhonatan Yair"
 
         ls
-        cd ./submodulo
+        cd $GITHUB_WORKSPACE/submodule
         git pull origin main
 
         cd ../
