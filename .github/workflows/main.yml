@@ -2,18 +2,30 @@ name: Update Main Repository
 
 on:
   push:
+    branches:
+      - main
+
 jobs:
   update-repo:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout main repository
+    - name: Checkout main repository and initialize submodules
       uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
 
     - name: Update submodule
       run: |
+        cd ./submodulo
+        git checkout main
+        git pull origin main
+        cd ..
 
-        git submodule update --remote
+    - name: Check for changes and push updates
+      run: |
+        git config --global user.email "jonathanpeinado8@gmail.com"
+        git config --global user.name "Jhonatan Yair"
 
         git status
         ls
@@ -26,8 +38,8 @@ jobs:
 
         # Verificar si hay cambios en el repositorio principal antes de hacer el commit
         if [ -n "$(git status --porcelain)" ]; then
-        git commit -m "Update submodule"
-        git push origin main
+          git commit -m "Update submodule"
+          git push origin main
         else
           echo "No hay cambios para confirmar en el repositorio principal."
         fi
