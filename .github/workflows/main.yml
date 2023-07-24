@@ -15,10 +15,11 @@ jobs:
     - name: Update submodule
       run: |
 
-        git config --global user.email "jonathanpeinado8@gmail.com"
-        git config --global user.name "Jhonatan Yair"
         git submodule update --remote
 
+        git status
+        ls
+        echo "Carpeta"
         git add -A
 
         # Verificar si hay cambios en el repositorio principal antes de hacer el commit
