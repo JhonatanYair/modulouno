@@ -1,0 +1,26 @@
+name: Update Main Repository
+
+on:
+  push:
+    paths:
+      - 'path/to/submodulo/*' # Ruta del submódulo que quieres monitorear
+jobs:
+  update-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout main repository
+      uses: actions/checkout@v2
+
+    - name: Update submodule
+      run: |
+        # Aquí puedes realizar los comandos necesarios para actualizar el submódulo
+        # Por ejemplo, puedes hacer un git pull en el submódulo y luego hacer un commit y push en el repositorio principal
+        cd path/to/submodule
+        git pull origin main
+
+        # Luego, en el repositorio principal, puedes actualizar el submódulo y hacer un commit y push
+        cd ../..
+        git add path/to/submodulo
+        git commit -m "Update submodule"
+        git push origin main
