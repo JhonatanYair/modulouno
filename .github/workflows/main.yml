@@ -19,10 +19,10 @@ jobs:
         git config --global user.name "Jhonatan Yair"
 
         ls
-        cd $GITHUB_WORKSPACE/submodule
+        cd $GITHUB_WORKSPACE/submodulo
         git pull origin main
 
-        cd ../
+        cd $GITHUB_WORKSPACE
         ls
 
         git add -A
