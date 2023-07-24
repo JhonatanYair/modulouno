@@ -12,12 +12,11 @@ jobs:
     steps:
     - name: Checkout main repository and initialize submodules
       uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
 
     - name: Update submodule
       run: |
         cd ./submodulo
+        git init
         git fetch origin main
         git checkout main
         git pull origin main
