@@ -18,6 +18,10 @@ jobs:
         git status
         ls
         echo "Carpeta"
+
+        cd ./submodulo
+        ls
+
         git add -A
 
         # Verificar si hay cambios en el repositorio principal antes de hacer el commit
