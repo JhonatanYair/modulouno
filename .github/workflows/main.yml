@@ -17,13 +17,7 @@ jobs:
 
         git config --global user.email "jonathanpeinado8@gmail.com"
         git config --global user.name "Jhonatan Yair"
-
-        ls
-        cd $GITHUB_WORKSPACE/submodulo
-        git pull origin main
-
-        cd $GITHUB_WORKSPACE
-        ls
+        git submodule update
 
         git add -A
 
