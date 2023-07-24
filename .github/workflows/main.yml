@@ -26,5 +26,11 @@ jobs:
         ls
 
         git add -A
+
+        # Verificar si hay cambios en el repositorio principal antes de hacer el commit
+        if [ -n "$(git status --porcelain)" ]; then
         git commit -m "Update submodule"
         git push origin main
+        else
+          echo "No hay cambios para confirmar en el repositorio principal."
+        fi
