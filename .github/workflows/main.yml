@@ -15,6 +15,7 @@ jobs:
     - name: Update submodule
       run: |
 
+        git checkout main
         git submodule update --remote
 
         git status
