@@ -2,8 +2,6 @@ name: Update Main Repository
 
 on:
   push:
-    branches:
-      - main
 jobs:
   update-repo:
     runs-on: ubuntu-latest
@@ -15,7 +13,6 @@ jobs:
     - name: Update submodule
       run: |
 
-        git checkout main
         git submodule update --remote
 
         git status
