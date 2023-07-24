@@ -2,8 +2,7 @@ name: Update Main Repository
 
 on:
   push:
-    paths:
-      - 'path/to/submodulo/*' # Ruta del submódulo que quieres monitorear
+
 jobs:
   update-repo:
     runs-on: ubuntu-latest
